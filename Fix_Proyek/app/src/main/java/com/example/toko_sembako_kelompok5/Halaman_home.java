@@ -19,6 +19,15 @@ ImageButton home,tentang,barang;
         barang=findViewById(R.id.btn_barang);
         getSupportActionBar().setTitle("Halaman Home");
 
+//  Untuk halaman kelompok
+        tentang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                halamanKelompok();
+            }
+        });
+
+//        Untuk halaman barang
         barang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -26,6 +35,11 @@ ImageButton home,tentang,barang;
             }
         });
 
+    }
+    public void halamanKelompok()
+    {
+        Intent openKelompok=new Intent(Halaman_home.this, Halaman_kelompok.class);
+        startActivity(openKelompok);
     }
     public void halamanbarang()
     {
