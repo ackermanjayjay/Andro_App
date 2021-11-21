@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Toko_Sembako_Kelompok5">
         <activity
+            android:name=".Halaman_transaksi"
+            android:exported="false" />
+        <activity
             android:name=".Halaman_kelompok"
             android:exported="false" />
         <activity
