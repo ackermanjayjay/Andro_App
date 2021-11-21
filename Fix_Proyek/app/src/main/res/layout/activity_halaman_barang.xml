@@ -6,6 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".Halaman_barang">
 
+    <ImageButton
+        android:id="@+id/btn_tentang_barang"
+        android:layout_width="62dp"
+        android:layout_height="63dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_people_24" />
+
+    <ImageButton
+        android:id="@+id/btn_home_barang"
+        android:layout_width="62dp"
+        android:layout_height="63dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_home_24" />
+
+    <ImageButton
+        android:id="@+id/btn_barang_barang"
+        android:layout_width="62dp"
+        android:layout_height="63dp"
+        android:layout_marginEnd="272dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/baseline_shopping_basket_black_18" />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="145dp"
