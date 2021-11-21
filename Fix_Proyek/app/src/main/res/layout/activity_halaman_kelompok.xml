@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_dark"
     tools:context=".Halaman_kelompok">
 
     <ImageButton
@@ -46,6 +47,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="58dp"
         android:text="Selamet Saputra"
+        android:textColor="#F3EEEE"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -58,6 +60,7 @@
         android:layout_marginTop="66dp"
         android:layout_marginEnd="129dp"
         android:text="Pembuat Toko Sembako"
+        android:textColor="#F3F1F1"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,6 +73,7 @@
         android:layout_marginStart="216dp"
         android:layout_marginTop="58dp"
         android:text="Muhammad Reza"
+        android:textColor="#FBFAFA"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -81,6 +85,7 @@
         android:layout_marginStart="116dp"
         android:layout_marginTop="36dp"
         android:text="Syechan Ahmad Z"
+        android:textColor="#F1EBEB"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
@@ -92,6 +97,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="92dp"
         android:text="Tita Indah"
+        android:textColor="#F8F5F5"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
@@ -103,6 +109,7 @@
         android:layout_marginStart="264dp"
         android:layout_marginTop="92dp"
         android:text="Meutia Aini"
+        android:textColor="#F8F5F5"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
@@ -114,6 +121,7 @@
         android:layout_marginStart="120dp"
         android:layout_marginTop="80dp"
         android:text="Afrahani Lutfiyah"
+        android:textColor="#F8F5F5"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
@@ -125,6 +133,7 @@
         android:layout_marginStart="62dp"
         android:layout_marginTop="3dp"
         android:text="2019470069"
+        android:textColor="#F8F5F5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -135,6 +144,7 @@
         android:layout_marginStart="244dp"
         android:layout_marginTop="3dp"
         android:text="2019470055"
+        android:textColor="#F1EEEE"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -145,6 +155,7 @@
         android:layout_marginStart="140dp"
         android:layout_marginTop="7dp"
         android:text="2019470110"
+        android:textColor="#F8F5F5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
@@ -155,6 +166,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="18dp"
         android:text="2019470073"
+        android:textColor="#F8F5F5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
@@ -165,6 +177,7 @@
         android:layout_marginStart="264dp"
         android:layout_marginTop="15dp"
         android:text="2019470043"
+        android:textColor="#F8F5F5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -175,6 +188,7 @@
         android:layout_marginStart="136dp"
         android:layout_marginTop="16dp"
         android:text="2019470005"
+        android:textColor="#F8F5F5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 </androidx.constraintlayout.widget.ConstraintLayout>
