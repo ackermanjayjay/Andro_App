@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 //import android.widget.Button;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
@@ -15,6 +16,12 @@ ImageButton Home,
         ,kelompok
         ,beliTelur
         ,beliMinyak;
+Button kurangMinyak
+        ,kurangTelor
+        ,hapusMinyak
+        ,hapusTelur;
+    int akumulasiTelor=0
+            ,akumulasiMinyak=0;
 
 EditText telur
         ,minyak;
@@ -26,9 +33,18 @@ EditText telur
         Home=findViewById(R.id.btn_home_barang);
         kelompok=findViewById(R.id.btn_tentang_barang);
 
-//    Tombol beli Telor
+
+//        Tombol Hapus unit beli
+        hapusMinyak=findViewById(R.id.btn_hapusMinyak);
+        hapusTelur=findViewById(R.id.btn_hapusTelor);
+
+//    Tombol beli
         beliTelur=findViewById(R.id.btn_beli_telor);
         beliMinyak=findViewById(R.id.btn_beli_minyak);
+
+//        Tombol kurang unit
+    kurangMinyak=findViewById(R.id.btn_kurangMinyak);
+    kurangTelor=findViewById(R.id.btn_kurangTelor);
 
 //        Hasil pembelian
         telur=findViewById(R.id.txt_telor);
@@ -50,6 +66,37 @@ EditText telur
                 BukaHalamanKelompok();
             }
         });
+
+//        Untuk Tombol Hapus unit barang beli
+        hapusTelur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HapusTelur();
+            }
+        });
+
+        hapusMinyak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HapusMinyak();
+            }
+        });
+
+
+//        Untuk tombol pengurangan unit barang
+        kurangTelor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TombolKurangTelor();
+            }
+        });
+        kurangMinyak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TombolKurangMinyak();
+            }
+        });
+
 //        Untuk Tombol beli barang minyak dan telur
         beliTelur.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,16 +112,39 @@ EditText telur
             }
         });
     }
-//    Untuk transaksi barang
+//    Untuk tombol hapus unit aka reset
+    public void HapusTelur()
+    {
+        telur.setText("");
+    }
+    public  void HapusMinyak()
+    {
+        minyak.setText("");
+    }
+
+
+//    Untuk Tombol unit barang Decrement
+    public void TombolKurangTelor()
+    {
+        akumulasiTelor--;
+        telur.setText(""+akumulasiTelor);
+    }
+    public void TombolKurangMinyak()
+    {
+        akumulasiMinyak--;
+        minyak.setText(""+akumulasiMinyak);
+    }
+
+//    Untuk Tombol unit barang Increment
     public void TransaksiBeliTelur()
     {
-        int akumulasi=0;
-        akumulasi++;
-        telur.setText(""+akumulasi);
+
+        akumulasiTelor++;
+        telur.setText(""+akumulasiTelor);
     }
     public void TransaksiBeliMinyak()
     {
-        int akumulasiMinyak=0;
+
         akumulasiMinyak++;
         minyak.setText(""+akumulasiMinyak);
 
