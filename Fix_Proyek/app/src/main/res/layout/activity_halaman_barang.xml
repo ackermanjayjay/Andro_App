@@ -120,7 +120,7 @@
         android:id="@+id/btn_beli_minyak"
         android:layout_width="48dp"
         android:layout_height="39dp"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="40dp"
         android:backgroundTint="@color/teal_700"
         app:layout_constraintStart_toEndOf="@+id/textView21"
@@ -148,5 +148,51 @@
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/btn_beli_minyak" />
+
+    <Button
+        android:id="@+id/btn_kurangTelor"
+        android:layout_width="55dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="62dp"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:text="-"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/btn_beli_telor"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_kurangMinyak"
+        android:layout_width="55dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="83dp"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:text="-"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/btn_beli_minyak"
+        app:layout_constraintTop_toBottomOf="@+id/btn_kurangTelor" />
+
+    <Button
+        android:id="@+id/btn_hapusTelor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="12dp"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:text="Hapus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_kurangTelor" />
+
+    <Button
+        android:id="@+id/btn_hapusMinyak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:text="Hapus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_kurangMinyak" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
