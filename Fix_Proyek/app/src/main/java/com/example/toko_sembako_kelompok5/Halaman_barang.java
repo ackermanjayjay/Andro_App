@@ -9,22 +9,37 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class Halaman_barang extends AppCompatActivity {
-ImageButton Home,
-        barang
+ImageButton Home
+        ,barang
         ,kelompok
         ,beliTelur
         ,beliMinyak;
 Button kurangMinyak
         ,kurangTelor
         ,hapusMinyak
-        ,hapusTelur;
+        ,hapusTelur
+        ,Button;
     int akumulasiTelor=0
             ,akumulasiMinyak=0;
 
+    int hargaTelur=25000
+            ,hargaMinyak=18000
+            ,totalMinyak;
+
+    boolean kurangOil
+            ,kurangTelur
+            ,tambahMinyak
+            ,tambahTelur;
+
 EditText telur
         ,minyak;
+
+
+TextView hasilTelur
+        ,hasilMinyak;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -33,6 +48,9 @@ EditText telur
         Home=findViewById(R.id.btn_home_barang);
         kelompok=findViewById(R.id.btn_tentang_barang);
 
+
+//  Coba tombol beli
+        Button=findViewById(R.id.btn_beli);
 
 //        Tombol Hapus unit beli
         hapusMinyak=findViewById(R.id.btn_hapusMinyak);
@@ -52,6 +70,14 @@ EditText telur
 
 //        Untuk judul atas
         getSupportActionBar().setTitle("Halaman barang");
+
+//        Test tombol beli
+        Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Buy();
+            }
+        });
 
 //        Untuk Navgasi bottom button
         Home.setOnClickListener(new View.OnClickListener() {
@@ -100,54 +126,109 @@ EditText telur
 //        Untuk Tombol beli barang minyak dan telur
         beliTelur.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
             TransaksiBeliTelur();
             }
         });
-        beliMinyak.setOnClickListener(new View.OnClickListener() {
+        beliMinyak.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 TransaksiBeliMinyak();
 
             }
         });
     }
+
+
 //    Untuk tombol hapus unit aka reset
     public void HapusTelur()
     {
+
         telur.setText("");
     }
     public  void HapusMinyak()
     {
         minyak.setText("");
+        hasilMinyak.setText("");
     }
 
 
 //    Untuk Tombol unit barang Decrement
     public void TombolKurangTelor()
     {
+        if(telur==null)
+        {
+            telur.setText("");
+        }
         akumulasiTelor--;
         telur.setText(""+akumulasiTelor);
+        akumulasiTelor=Integer.parseInt(telur.getText()+"");
+        kurangTelur = true;
+
     }
     public void TombolKurangMinyak()
     {
-        akumulasiMinyak--;
-        minyak.setText(""+akumulasiMinyak);
+        if(minyak==null)
+        {
+            minyak.setText("");
+        }
+        else {
+            akumulasiMinyak--;
+            minyak.setText("" + akumulasiMinyak);
+            akumulasiMinyak=Integer.parseInt(minyak.getText()+"");
+            kurangOil=true;
+        }
     }
 
 //    Untuk Tombol unit barang Increment
     public void TransaksiBeliTelur()
     {
-
-        akumulasiTelor++;
-        telur.setText(""+akumulasiTelor);
+        if(telur==null)
+        {
+            telur.setText("");
+        }
+        else {
+            akumulasiTelor++;
+            telur.setText("" + akumulasiTelor);
+            akumulasiTelor=Integer.parseInt(telur.getText()+"");
+            tambahTelur=true;
+        }
     }
     public void TransaksiBeliMinyak()
     {
 
-        akumulasiMinyak++;
-        minyak.setText(""+akumulasiMinyak);
+        if(minyak==null)
+        {
+            minyak.setText("");
+        }
+        else {
+            akumulasiMinyak++;
+            minyak.setText("" + akumulasiMinyak);
+            akumulasiMinyak=Integer.parseInt(minyak.getText()+"");
+            tambahMinyak=true;
+        }
 
+    }
+    //    Tombol beli
+    public void Buy()
+    {
+        if(tambahMinyak==true)
+        {
+            Intent hasilTransaksiMinyak = new Intent(Halaman_barang.this,Halaman_transaksi.class);
+            hasilTransaksiMinyak.putExtra("HasilTelur",minyak.getText().toString());
+            startActivity(hasilTransaksiMinyak);
+        }
+        else if(tambahTelur==true)
+        {
+            Intent hasilTransaksiTelur = new Intent(Halaman_barang.this,Halaman_transaksi.class);
+
+            int total=akumulasiTelor*hargaTelur;
+            hasilTransaksiTelur.putExtra("HasilTelur",total);
+                startActivity(hasilTransaksiTelur);
+        }
     }
 
 //    Navigasi bottom button
