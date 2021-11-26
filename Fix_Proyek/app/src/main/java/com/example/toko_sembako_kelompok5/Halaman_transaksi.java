@@ -17,8 +17,12 @@ TextView totalTelur
         //        Untuk judul atas
         getSupportActionBar().setTitle("Halaman Transaksi");
 
-        int dapat=getIntent().getExtras().getInt("HasilTelur");
-//        String hasilTelur=dapat.getString("HasilTelur");
-        totalTelur.setText(Integer.toString(dapat));
+//        Hasil Beli Telur
+        int dapatTelur=getIntent().getExtras().getInt("HasilTelur");
+        totalTelur.setText("Rp."+Integer.toString(dapatTelur));
+
+//        Hasil Beli Minyak
+        int dapatMinyak=getIntent().getExtras().getInt("HasilMinyak");
+        totalMinyak.setText("Rp."+Integer.toString(dapatMinyak));
     }
 }
