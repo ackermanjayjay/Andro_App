@@ -27,12 +27,15 @@ Button kurangMinyak
 
     int hargaTelur=25000
             ,hargaMinyak=18000
-            ,totalMinyak;
+            ,totalMinyak=0
+            ,totalTelur=0;
 
     boolean kurangOil
             ,kurangTelur
             ,tambahMinyak
             ,tambahTelur;
+    Intent hasilTambah
+            ,hasilKurang;
 
 EditText telur
         ,minyak;
@@ -219,40 +222,56 @@ EditText telur
     //    Tombol beli
     public void Buy()
     {
-        if(tambahMinyak==true)
+         if(tambahMinyak==true && tambahTelur==true)
         {
-            Intent hasilTransaksiMinyak = new Intent(Halaman_barang.this,Halaman_transaksi.class);
-            int totalMinyak=akumulasiMinyak*hargaMinyak;
-            hasilTransaksiMinyak.putExtra("HasilMinyak",totalMinyak);
-            startActivity(hasilTransaksiMinyak);
+           hasilTambah= new Intent(Halaman_barang.this,Halaman_transaksi.class);
+           totalMinyak=akumulasiMinyak*hargaMinyak;
+            totalTelur=akumulasiTelor*hargaTelur;
+            hasilTambah.putExtra("HasilTelur",totalTelur);
             tambahMinyak=false;
+            hasilTambah.putExtra("HasilMinyak",totalMinyak);
+            tambahTelur=false;
+            startActivity(hasilTambah);
         }
-        else if(tambahTelur==true)
-        {
-            Intent hasilTransaksiTelur = new Intent(Halaman_barang.this,Halaman_transaksi.class);
 
-            int total=akumulasiTelor*hargaTelur;
-            hasilTransaksiTelur.putExtra("HasilTelur",total);
-                startActivity(hasilTransaksiTelur);
-                tambahTelur=false;
-        }
-        else if(kurangOil==true)
-        {
-            Intent hasilTransaksiMinyak = new Intent(Halaman_barang.this,Halaman_transaksi.class);
-            int totalMinyak=akumulasiMinyak*hargaMinyak;
-            hasilTransaksiMinyak.putExtra("HasilMinyak",totalMinyak);
-            startActivity(hasilTransaksiMinyak);
-            kurangOil=false;
-        }
-        else if(kurangTelur==true)
-        {
-            Intent hasilTransaksiTelur = new Intent(Halaman_barang.this,Halaman_transaksi.class);
+         else if(tambahMinyak==true || tambahTelur==true)
+    {
+        hasilTambah= new Intent(Halaman_barang.this,Halaman_transaksi.class);
+        totalMinyak=akumulasiMinyak*hargaMinyak;
+        totalTelur=akumulasiTelor*hargaTelur;
+        hasilTambah.putExtra("HasilTelur",totalTelur);
+        tambahMinyak=false;
+        hasilTambah.putExtra("HasilMinyak",totalMinyak);
+        tambahTelur=false;
+        startActivity(hasilTambah);
+    }
 
-            int total=akumulasiTelor*hargaTelur;
-            hasilTransaksiTelur.putExtra("HasilTelur",total);
-            startActivity(hasilTransaksiTelur);
-            kurangTelur=false;
+
+//
+        else if(kurangTelur==true && kurangOil==true)
+        {
+            hasilKurang = new Intent(Halaman_barang.this,Halaman_transaksi.class);
+            totalMinyak=akumulasiMinyak*hargaMinyak;
+            totalTelur=akumulasiTelor*hargaTelur;
+            hasilKurang.putExtra("HasilTelur",totalTelur);
+            tambahMinyak=false;
+            hasilKurang.putExtra("HasilMinyak",totalMinyak);
+            tambahTelur=false;
+            startActivity(hasilKurang);
+
         }
+         else if(kurangTelur==true || kurangOil==true)
+         {
+             hasilKurang = new Intent(Halaman_barang.this,Halaman_transaksi.class);
+             totalMinyak=akumulasiMinyak*hargaMinyak;
+             totalTelur=akumulasiTelor*hargaTelur;
+             hasilKurang.putExtra("HasilTelur",totalTelur);
+             tambahMinyak=false;
+             hasilKurang.putExtra("HasilMinyak",totalMinyak);
+             tambahTelur=false;
+             startActivity(hasilKurang);
+
+         }
     }
 
 //    Navigasi bottom button
