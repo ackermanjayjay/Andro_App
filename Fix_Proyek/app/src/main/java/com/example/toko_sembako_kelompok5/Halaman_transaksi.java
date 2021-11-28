@@ -7,13 +7,15 @@ import android.widget.TextView;
 
 public class Halaman_transaksi extends AppCompatActivity {
 TextView totalTelur
-        ,totalMinyak;
+        ,totalMinyak
+        ,totalTransaksi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_halaman_transaksi);
         totalTelur=(TextView)findViewById(R.id.hasil_barang1);
         totalMinyak=(TextView)findViewById(R.id.hasil_barang2);
+        totalTransaksi=(TextView)findViewById(R.id.total_harga);
         //        Untuk judul atas
         getSupportActionBar().setTitle("Halaman Transaksi");
 
@@ -24,5 +26,9 @@ TextView totalTelur
 //        Hasil Beli Minyak
         int dapatMinyak=getIntent().getExtras().getInt("HasilMinyak");
         totalMinyak.setText("Rp."+Integer.toString(dapatMinyak));
+
+        int total= dapatMinyak+dapatTelur;
+        totalTransaksi.setText("Rp"+Integer.toString(total));
+
     }
 }
