@@ -30,7 +30,16 @@ EditText nama,pass_ku;
     }
     public void halamanhome()
     {
-        Intent pindah= new Intent(MainActivity.this,Halaman_home.class);
-        startActivity(pindah);
-    }
+        if(nama.length()==0)
+        {
+            nama.requestFocus();
+            nama.setError("Masukkan nama anda");
+        }
+        else {
+
+
+            Intent pindah = new Intent(MainActivity.this, Halaman_home.class);
+            startActivity(pindah);
+        }
+        }
 }
